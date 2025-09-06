@@ -1,6 +1,9 @@
 ### AAA-Backend
 # Restaurant API (Flask + PostgresSQL)
 
+## Download and Install
+- python (https://www.python.org/)
+- postgresql (https://www.postgresql.org/download/)
 ## Run
 - python -m venv .venv && source .venv/bin/activate
 - pip install -r requirements.txt
