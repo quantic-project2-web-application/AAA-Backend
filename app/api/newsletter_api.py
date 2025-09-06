@@ -14,20 +14,18 @@ def subscribe():
     payload = request.get_json() or {}
     data = news_letter_in_schema.load(payload)
     email = data["email"]
-    name = data.get("name")
 
     cust = Customer.query.filter_by(email=email).first()
     if cust:
         cust.newsletter_signup = True
-        if name:
-            cust.name = name
+  
     else:
-        cust = Customer(name=name or email.split("@")[0], email=email, newsletter_signup=True)
+        cust = Customer(name=email.split("@")[0], email=email, newsletter_signup=True)
         db.session.add(cust)
         db.session.flush()
 
     if not NewsletterSignup.query.filter_by(email=email).first():
-        db.session.add(NewsletterSignup(email=email, customer_id=cust.id))
+        db.session.add(NewsletterSignup(email=email))
 
     db.session.commit()
     return jsonify({"ok": True}), 201
