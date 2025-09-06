@@ -1,0 +1,9 @@
+q_env
+.venv/
+__pycache__/
+*.pyc
+instance/
+.env
+.flaskenv
+.mypy_cache/
+.pytest_cache/
