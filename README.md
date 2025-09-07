@@ -23,3 +23,12 @@
 - Flask-Migrate (Alembic)
 - Marshmallow (validation)
 - Flask-CORS (frontend integration)
+
+## Postman Collection
+
+A Postman collection is included in the project root:
+
+Cafe Fausse.postman_collection.json
+
+
+Import it into Postman to test all API endpoints quickly.

@@ -1,0 +1,272 @@
+{
+	"info": {
+		"_postman_id": "309fbaf2-d4a8-418f-9258-763e8f4f65b6",
+		"name": "Cafe Fausse",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46447242",
+		"_collection_link": "https://quantic-sec-project-team.postman.co/workspace/Quantic-Sec-Project-Team-Worksp~83d6a248-1588-49b4-a8e8-3d9ecdf8005f/collection/46447242-309fbaf2-d4a8-418f-9258-763e8f4f65b6?action=share&source=collection_link&creator=46447242"
+	},
+	"item": [
+		{
+			"name": "Customers",
+			"item": [
+				{
+					"name": "Get Customers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}customers",
+							"host": [
+								"{{url}}customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Customer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}customers/5",
+							"host": [
+								"{{url}}customers"
+							],
+							"path": [
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Customer",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}customers/5",
+							"host": [
+								"{{url}}customers"
+							],
+							"path": [
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Customer Info",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n            // \"name\": \"Customer Test\",\n            // \"email\": \"customer@test.com\",\n            // \"newsletter_signup\": true\n            \"phone\": \"+201021620407\"\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}customers/5",
+							"host": [
+								"{{url}}customers"
+							],
+							"path": [
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Customer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n            \"name\": \"Customer Test\",\n            \"email\": \"customer@test.com\",\n            \"newsletter_signup\": true\n            // \"phone\": null,\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}customers",
+							"host": [
+								"{{url}}customers"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reservations",
+			"item": [
+				{
+					"name": "Add Reservation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"Ahmed Hassan Saad T\",\"email\":\"ahmed@test1.com\",\"time_slot\":\"2025-09-08T19:00:00\",\"guests\":7}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}reservations",
+							"host": [
+								"{{url}}reservations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Reservations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}reservations",
+							"host": [
+								"{{url}}reservations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Reservation",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}reservations/2",
+							"host": [
+								"{{url}}reservations"
+							],
+							"path": [
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Reservations Availability",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}reservations/availability?time_slot=2025-09-08T19:00:00",
+							"host": [
+								"{{url}}reservations"
+							],
+							"path": [
+								"availability"
+							],
+							"query": [
+								{
+									"key": "time_slot",
+									"value": "2025-09-08T19:00:00"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Reservation",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}reservations/2",
+							"host": [
+								"{{url}}reservations"
+							],
+							"path": [
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Newsletter",
+			"item": [
+				{
+					"name": "Newsletter Signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"email\":\"guest@example.com\",\"name\":\"Guest\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}newsletter-signups",
+							"host": [
+								"{{url}}newsletter-signups"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Unsubscribe",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"email\": \"ahmed@example.com\" }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}newsletter-signups/unsubscribe?email=ahmed@example.com",
+							"host": [
+								"{{url}}newsletter-signups"
+							],
+							"path": [
+								"unsubscribe"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "ahmed@example.com"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
